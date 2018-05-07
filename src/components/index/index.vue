@@ -281,9 +281,7 @@
 		</div>
 	</div>
 </template>
-
 <script>
-import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
   
 export default {
@@ -378,7 +376,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" >
+<style lang="scss" scoped>
 .navbar-bg-opacity{width:100%;background-color: #000000;opacity: 0.4;height: 100%;position: absolute;top:0;z-index: -9999;}
 .nav>li{text-align: left;}
 /*自定义swiper分页器按钮样式*/
@@ -444,6 +442,7 @@ export default {
 .section-wrap{display: table;width:100%;}
 .section-div{display: table-cell;vertical-align: middle;height:100%;}
 .section-bg{background-position: center;background-repeat: no-repeat;background-size: cover;}
+	
 .section-title{color:#ffffff;font-size:32px;letter-spacing: 20px;margin-right:-20px;}
 .section-description{color:#fff;font-size:14px;max-width:500px;padding-top:34px;padding-bottom:34px;line-height: 26px;margin-bottom:16px;}
 .section-btn{padding:9px 35px;border:1px solid rgba(255,255,255,1);color:rgba(255,255,255,1);font-size:14px;}
@@ -1122,7 +1121,8 @@ export default {
     animation: fbtt50 1s ease;
 }
 
-// common
+/*common*/
 .h100{height: 100%;}
 .maxImg img{max-width: 100%;}
+	
 </style>
