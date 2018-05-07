@@ -70,6 +70,13 @@
 					</div>		
 				</div>
 			</swiper-slide>
+			<swiper-slide>
+				<div class="section-wrap section2 section-bg h100">
+					<div class="section-div">
+						dsf
+					</div>		
+				</div>
+			</swiper-slide>
 			
 			<div class="swiper-pagination swiper-pagination1" slot="pagination"></div>
 		</swiper>
