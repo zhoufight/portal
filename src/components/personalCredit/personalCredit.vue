@@ -17,10 +17,10 @@
                         <li >
 							<router-link to="/"><i class="fa fa-bars fa-hide"></i>&nbsp;首页</router-link>
                         </li>
-                        <li class="active">
+                        <li>
 							<router-link to="/enterpriseCredit"><i class="fa fa-building-o fa-hide"></i>&nbsp;企业信用</router-link>
                         </li>
-                        <li>
+                        <li class="active">
 							<router-link to="/personalCredit"><i class="fa fa-user-o fa-hide"></i>&nbsp;个人信用</router-link>
                         </li>
                         <li>
@@ -51,13 +51,11 @@
 								<div class="word-icon word8"></div>
 								<div class="word-icon word9"></div>
 							</div> -->
-							<div class="section1-title">
-								企业信用
-							</div>
+							<div class="section1-title">个人信用</div>
 							<div class="section1-content">
-								<p>企业信用分是基于代理商与中国电信之间海量的供应链真实交易数据，依托在大数据、云计算、</p>
-								<p>数据挖掘、机器学习方面的前沿技术，进行信用数据智能分析、信用价值挖掘、信用风险模型</p>
-								<p>构建，客观地呈现代理商的信用状况、真实经营状况、真实业务发展状况。</p>
+								<p>立趣个人信用分是在用户授权的情况下，依据用户留存在运营商的各类消费及行为</p>
+								<p>数据，结合传统金融收支数据、借贷数据、信用数据，运用大数据及机器学习等技术，</p>
+								<p>通过逻辑回归、决策树、随机森林等模型算法，对各维度数据进行综合处理和评估。</p>
 							</div>
 						</div>
 					</div>		
@@ -69,11 +67,17 @@
 						<div class="credit-section-wrapper">
 							<div class="col-md-6 col-sm-6 col-xs-12 text-left">
 								<div class="section-title">贷前信用评分</div>
-								<div class="section-subtitle">企业信用评分是根据您的企业资质、经营情况、信用历史、企业关联关系、企业履约能力、佣金质量等信息，对企业的信用进行评价，这个分数将综合评估企业在生产经营领域的信用情况。</div>
+								<div class="section-subtitle">
+									<p>立趣个人信用分是在用户授权的情况下，依据用户在运营商上的各类消费及行为数据，结合其他行业多样化的数据源，运用云计算及机器学习等技术，通过逻辑回归、决策树、随机森林等模型算法，对各维度数据进行综合处理和评估，在客户身份属性、消费行为、稳定性、终端、朋友圈、号码自然属性这六个维度客观呈现个人信用状况的综合分值。<p>
+									<p>立趣个人信用分的分值范围为300至1000，分值越高代表信用越好，相应违约率相对较低，较高的立趣个人信用分可以帮助用户获得更高效、更优质的服务。</p>
+								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<div class="credit-section-enterprise text-center">
-									<img src="./credit-setcion-enterprise.png">
+									<img src="./credit-nature.png">
+								</div>
+								<div>
+									<img src="./credit-level.png">
 								</div>
 							</div>
 							<div class="clearfix"></div>
@@ -94,62 +98,47 @@
 					</div>		
 				</div>
 			</swiper-slide>
-			<swiper-slide>
-				<div class="section-wrap section4 section-bg h100">
-					<div class="section-div">
-						<div class="credit-section-wrapper text-center ">
-							<div class="section-title">贷中监控</div>
-							<div class="section-subtitle">通过抓取供应链企业借贷后的交易数据，借助在风险模型上的先进技术建立了针对企业的贷中监控预警，可提前识别企业可能出现的风险，通多种方式提醒金融公司，从而降低风险，减少损失。</div>
-							<swiper :options="swiperOption2" class="swiper-container2" ref="swiper2" :style="{width:swiperWrapWidth}">
-								<swiper-slide class="slide1 text-center hvr-grow-shadow">
-									<div class="slide-block-title">易集成</div>
-									<div class="credit-icon icon1"></div>
-									<p>不改变自有的风险预警流程，增加立趣异动预警流程，包括监测流程和预警结果获取步骤。</p>
-								</swiper-slide>
-								<swiper-slide class="slide2 text-center">
-									<div class="slide-block-title">遵守全面性原则</div>
-									<div class="credit-icon icon2"></div>
-									<p>立趣引入互联网预警、通信行为预警等信号，与金融机构自有的预警信号互相补充，扩展风险预警的全面性。</p>
-								</swiper-slide>
-								<swiper-slide class="slide3 text-center">
-									<div class="slide-block-title">遵守及时性原则</div>
-									<div class="credit-icon icon3"></div>
-									<p>基于互联网大数据更新高频率，立趣引入准实时的异动预警，使金融机构的预警及时性得到跨越性的提高。</p>
-								</swiper-slide>
-								<div class="swiper-pagination swiper-pagination2"></div>
-							</swiper>
-						</div>
-
-					</div>		
-				</div>
-			</swiper-slide>
+			
 			<swiper-slide>
 				<div class="section-wrap section5 section-bg h100">
 					<div class="section-div">
 						<div class="credit-section-wrapper text-center">
-							<div class="section-title">贷后跟踪</div>
-							<div class="section-subtitle">大量数据表明，中小企业一旦出现风险，最大的可能是企业主已经失联。借助多样化的数据源和业务规则，可建立针对企业主的失联跟踪模型，识别企业主可能的新的联系方式，从而降低催收成本，减少损失。</div>
+							<div class="section-title">贷中监控</div>
+							<div class="section-subtitle">通过抓取个人用户借贷后的行为数据，借助在风险模型上的先进技术建立了针对于个人的贷中监控预警，可提前识别个人可能出现的风险，通过多种方式提醒金融公司，从而降低风险，减少损失。</div>
 							<div class="section-intro">
-								<img src="./credit-track.png">
+								<img src="./credit-monitor.png">
 							</div>
-							<div class="section-abstract">逾期催收管理流程</div>
+							<div class="section-abstract">风控预警的闭环流程</div>
 						</div>
 					</div>		
 				</div>
 			</swiper-slide>
+			
 			<swiper-slide>
 				<div class="section-wrap section6 section-bg h100">
 					<div class="section-div">
 						<div class="credit-section-wrapper">
-							<div class="col-md-6 col-sm-6 col-xs-12 text-left">
-								<div class="section-title">失联修复</div>
-								<div class="section-subtitle">利用大数据技术，通过分析用户历史痕迹，包括身份、终端、朋友圈以及互联网等数据，全面修复失联用户新的联系方式。</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<div class="credit-section-enterprise">
-									<img src="./loss-communication.png">
-								</div>
-							</div>
+							<div class="section-title ">贷后跟踪</div>
+							<div class="section-subtitle ">贷后催收最大的难题是借款用户失联，无法触达用户。立趣贷后跟踪模型，借助多样化的数据源和业务规则，可建立针对个人用户的失联跟踪模型，识别个人用户可能的新的联系方式，从而降低催收成本，减少损失。</div>
+							<swiper :options="swiperOption2" class="swiper-container2" ref="swiper2" :style="{width:swiperWrapWidth}">
+								<swiper-slide class="slide1 text-center hvr-grow-shadow">
+									<div class="slide-block-title">易集成</div>
+									<div class="credit-icon icon4"></div>
+									<p>不改变原有流程，增加立趣模块</p>
+								</swiper-slide>
+								<swiper-slide class="slide2 text-center">
+									<div class="slide-block-title">修复触达方式</div>
+									<div class="credit-icon icon5"></div>
+									<p>触达客户是催收的最基本前提</p>
+								</swiper-slide>
+								<swiper-slide class="slide3 text-center">
+									<div class="slide-block-title">丰富触达方式</div>
+									<div class="credit-icon icon6"></div>
+									<p>发现挖掘新的触达方式</p>
+								</swiper-slide>
+								<div class="swiper-pagination swiper-pagination2"></div>
+							</swiper>
+
 							<div class="clearfix"></div>
 							<div class="footer">
 								<div class="container" style="margin-top:0px;margin-bottom:0px;">
@@ -323,30 +312,30 @@ img{max-width: 100%;}
 .section2 .section-title,.section4 .section-title,.section5 .section-title{letter-spacing: 20px;margin-right:-20px;}
 .section-intro img{max-width: 100%;}
 .section4 .section-title,.section4 .section-subtitle{color:#ffffff;}
+.section3{background-color: rgb(244, 249, 252);}
 .section3 .section-title:before{content:" ";border:2px solid #036db7;margin-right:8px;}
 .section3 .section-subtitle{margin-bottom:114px;}
 .section4 .section-subtitle,.section5 .section-subtitle{width:700px;margin:0px auto;margin-bottom:65px;}
 .section4{background-color: rgb(3, 111, 183);}
-.section5{background-color: rgb(243, 251, 251);}
-.section6{background-color: rgb(222, 232, 244);}
-.section6 .section-title:before{content:" ";border:2px solid #036db7;margin-right:8px;}
+.section5{background-color: rgb(3, 109, 183);color: #ffffff;}
+.section5 .section-subtitle,.section5 .section-title,.enterprise .section-abstract{color: #ffffff;}
+.section6{background-color: rgb(244, 249, 252);}
 .section6 .section-div{position: relative;display: block;padding-top: 98px;box-sizing: border-box;}
+.section6 .section-subtitle{margin: 0 auto 10px;}
 @media (max-width:640px){
 	.section6 .section-div{padding-top: 68px;}
 }
 .section7 .fp-tableCell{display: block;}
 
 .swiper-container2{max-width:980px;}
-.slide-block-title{color:#ffffff;padding-top:13px;padding-bottom:13px;font-size:20px;margin-bottom:54px;background-color: #1f5294;}
+.slide-block-title{color:#ffffff;padding-top:13px;padding-bottom:13px;font-size:20px;margin-bottom:54px;background-color: #6bbf8b;}
 .swiper-container2 .swiper-wrapper p{margin:44px 50px;font-size:14px;height:50px;color:#282828;}
-.slide1,.slide2,.slide3{background: #dee8f4;}
-.personal .swiper-wrapper .slide-block-title{background-color: #6bbf8b;margin-bottom:40px;}
-.personal .swiper-wrapper p{margin:18px 50px;color:#555555;}
+.slide1,.slide2,.slide3{background: #ffffff;}
+.slide1 p,.slide2 p,.slide3 p{color: #555555!important;}
 
-.footer{position: absolute;left: 0;bottom: 0;}
+.footer{position: absolute;left: 0;bottom: 0;padding: 26px 0 0;}
 
 
-.enterprise .section-abstract{color:#000000;}
 @media(max-width:767px){
 	.section .col-xs-12{padding:5px;}
 	.credit-section-wrapper{padding:0 14px;}

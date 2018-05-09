@@ -29,10 +29,10 @@
                         <li class="dropdown">
                             <a href="aboutus.html#tab1" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-question-circle-o fa-hide">&nbsp;</i>&nbsp;关于我们<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="aboutUs.html">立趣简介</a></li>
-                                <li><a href="news.html">新闻中心</a></li>
-                                <li><a href="contactUs.html">联系我们</a></li>
-                                <li><a href="joinUs.html">加入我们</a></li>
+                                <li><router-link to="/aboutUs">立趣简介</router-link></li>
+                                <li><router-link to="/news">新闻中心</router-link></li>
+                                <li><router-link to="/contactUs">联系我们</router-link></li>
+                                <li><router-link to="/joinUs">加入我们</router-link></li>
                             </ul>
                         </li>
                     </ul>
@@ -317,6 +317,7 @@ export default {
 			},
 			jobOption:{
 				slidesPerView: 5,
+				autoHeight:true,
 				navigation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev'
@@ -358,6 +359,11 @@ export default {
 		swiperSlide
 	},
 	mounted(){
+		const that = this; 
+		window.onresize = function temp() { 
+			that.swiper.update(true)
+			
+		}; 
 		
 	},
 	methods:{
@@ -418,7 +424,7 @@ export default {
 .job-swiper .swiper-slide{padding:30px;}
 .slide3-header{padding-bottom:30px;padding-left:120px;}
 .slide3-body{padding-top:30px;padding-left:120px;padding-right:120px;text-align:center;color:#fff;font-size:14px;}
-.slide3-body a{text-decoration: none;font-size: 14px;color:#fff;padding-left:15px;padding-right:15px;}
+.slide3-body a{text-decoration: none;font-size: 14px;color:#fff;padding-left:15px;padding-right:15px;display: inline-block;}
 
 
 @media (max-width: 767px){ 	
