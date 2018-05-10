@@ -27,7 +27,7 @@
 							<router-link to="/solution"><i class="fa fa-newspaper-o fa-hide"></i>&nbsp;解决方案</router-link>
                         </li>
                         <li class="dropdown">
-                            <a href="aboutus.html#tab1" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-question-circle-o fa-hide">&nbsp;</i>&nbsp;关于我们<span class="caret"></span></a>
+                            <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-question-circle-o fa-hide">&nbsp;</i>&nbsp;关于我们<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><router-link to="/aboutUs">立趣简介</router-link></li>
                                 <li><router-link to="/news">新闻中心</router-link></li>

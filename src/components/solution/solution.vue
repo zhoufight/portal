@@ -26,8 +26,8 @@
                         <li class="active">
 							<router-link to="/solution"><i class="fa fa-newspaper-o fa-hide"></i>&nbsp;解决方案</router-link>
                         </li>
-                        <li class="dropdown">
-                            <a href="aboutus.html#tab1" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-question-circle-o fa-hide">&nbsp;</i>&nbsp;关于我们<span class="caret"></span></a>
+                        <li :class="{'open':isActive}" class="dropdown">
+                            <a @click="switchOpen" href="aboutus.html#tab1" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-question-circle-o fa-hide">&nbsp;</i>&nbsp;关于我们<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><router-link to="/aboutUs">立趣简介</router-link></li>
                                 <li><router-link to="/news">新闻中心</router-link></li>
@@ -148,6 +148,7 @@
 						<div class="con-map text-center">
 							<img src="./solution-personal-map.png">
 						</div>
+
 					</div>
 					<div class="solution-wrapper solution-coop">
 						<div class="con-title">合作机构</div>
@@ -178,6 +179,7 @@
 							</div>
 							<div class="clearfix"></div>
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -216,6 +218,18 @@ export default{
 				"logo":require('../../assets/images/logo_ly.png'),
 				"logo2":require('../../assets/images/logo.png')
 			},
+			isActive:false,
+			
+		}
+	},
+	mounted(){
+		
+	},
+	methods:{
+		switchOpen(){
+			
+			this.isActive=!this.isActive;
+			
 		}
 	}
 }

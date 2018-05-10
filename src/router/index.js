@@ -4,6 +4,10 @@ import index from '@/components/index/index'
 import enterpriseCredit from '@/components/enterpriseCredit/enterpriseCredit'
 import personalCredit from '@/components/personalCredit/personalCredit'
 import solution from '@/components/solution/solution'
+import aboutUs from '@/components/aboutUs/aboutUs'
+import news from '@/components/news/news'
+import contactUs from '@/components/contactUs/contactUs'
+import joinUs from '@/components/joinUs/joinUs'
 
 Vue.use(Router)
 const router=new Router({
@@ -36,6 +40,30 @@ const router=new Router({
 			name:'solution',
 			meta:{title:'解决方案'},
 			component:solution
+		},
+		{
+			path:'/aboutUs',
+			name:'aboutUs',
+			meta:{title:'关于我们'},
+			component:aboutUs
+		},
+		{
+			path:'/news',
+			name:'news',
+			meta:{title:'新闻中心'},
+			component:news
+		},
+		{
+			path:'/contactUs',
+			name:'contactUs',
+			meta:{title:'联系我们'},
+			component:news
+		},
+		{
+			path:'/joinUs',
+			name:'joinUs',
+			meta:{title:'加入我们'},
+			component:joinUs
 		}
 	]
 })
