@@ -41,31 +41,18 @@
             <div class="navbar-bg-opacity"></div>
         </nav>
         
-       	<div class="aboutus-bg aboutus-bg-contactus"></div>
+        <!-- 背景 -->
+		<div class="aboutus-bg aboutus-bg-news"></div>
 		<div class="clearfix"></div>
-		<div class="container contactus">
-			<div class="intro-wrapper text-left">
-				<div class="intro-title">广州立趣信息科技有限公司</div>
-				<div class="intro-route">
-					<div class="contact-route">
-						<p><i class="fa fa-home"></i>&nbsp;&nbsp;广州立趣信息科技有限公司</p>
-						<p><i class="fa fa-map-marker"></i>&nbsp;&nbsp;&nbsp;地址：广州市天河区思成路19号宏太智慧谷7栋301房</p>
-						<p><i class="fa fa-envelope"></i>&nbsp;&nbsp;邮编：510613</p>
-						<p><i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;电话：020-85162521</p>
-						<p><i class="fa fa-envelope"></i>&nbsp;&nbsp;邮箱：<a href="mailto:contact@lychee-info.cn">contact@lychee-info.cn</a></p>
-						<div class="bus-route line30">
-							<h4>公交车指引：</h4>
-							<p>（1）乘坐公交78A、901A和320线路，坐到“思成路站”下车即可看到宏太智慧谷园区；<br>
-							（2）其他公交线路如B4、B26、903、494、774、902、903、581、776等线路则坐到“软件路站”下车,根据园区指示牌指引步行5分钟即到。
-							</p>
-						</div>
-						<div class="drive-route line30">
-							<h4>自驾车路线指引：</h4>
-							<p>导航请定位为“宏太智慧谷”或“思成路”。</p>
-							<div class="text-center"><img src="./addr.png"></div>
-						</div>
+		<div class="container" style="min-height:500px;">
+			<div class="detail-container">
+				<div class="news-header-div text-left">
+					<h3 class="news-title" id="articleTitle">{{detail.ARTICLE_TITLE}}</h3>
+					<div class="pub-time" id="pubTime">
+						<span id="publish-time">{{detail.POST_TIME}}</span><span id="publisher">立趣信息科技</span>
 					</div>
 				</div>
+				<div class="pd text-left" id="articleContent" v-html="detail.ARTICLE_CONTENT"></div>
 			</div>
 		</div>
         
@@ -107,54 +94,42 @@ export default{
 	},
 	mounted(){
 		
-		
+		this.getData(this.$route.query.id)
 	},
 	methods:{
-		  
+		getData (id) { 
+			var self = this;
+			let url=this.HOST+'/portal/article.action?method=getArticleDetail&articleId='+id;
+			
+			this.$http.get(url).then(function(res){
+				if(res.data.errcode == 0){
+				   self.detail=res.data.data;
+			    }else{
+				   alert(res.data.msg)
+			    }
+				
+				console.log(res.data) 
+			}).catch(function (error) {
+				alert(error)
+			});
+		}  
 	}
 	
 }
 </script>
 <style lang="scss" scoped>
-.container{margin-top:80px;margin-bottom:80px;}
-.aboutus-bg-contactus{background-image: url(./bg-contactus.jpg);}
-.intro-wrapper{margin-bottom:80px;}
-p{color:#555555;font-size:16px;line-height: 1.8;}
-.footer p{color:#ffffff;font-size:14px;}
-.aboutus .aboutus-intro p:last-child{margin-top:40px;}
-.joinus .joinus-intro p{margin-bottom:40px;}
-.intro-title{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #e9e9e9;font-size:20px;color:#0f4994;}
-.contact-route{color:#35465a;}
-.contact-route >p{font-size:16px;padding-bottom:10px;}
-.contact-route  a{color:#35465a;font-size:16px;text-decoration: none;}
-.bus-route{padding-top:30px;padding-bottom:20px;}
-.drive-route{padding-top:20px;padding-bottom:20px}
-.drive-route p{padding-bottom:56px;}
-.contact-route h4{font-size:20px;padding-bottom:20px;}
-.contact-route img{max-width: 100%;}
-.jobs .col-md-4,
-.jobs .col-sm-4,
-.jobs .col-xs-12{
-	margin-bottom:20px;
-}
-.job p{color:#000000;}
-.job,.job:focus{display: block;padding-top: 13px;padding-bottom: 13px;border: 1px solid #dfdfdf;border-radius: 0.2px;text-align: left;text-decoration: none;}
-.job:hover{border: 1px solid #095db1;text-decoration: none;}
-.job>img{width:70px;margin-left:26px;margin-right:26px;}
-.job>div{display:inline-block;color:#132130;vertical-align: middle;} 
-.job>div>p{font-size:16px;} 
-.job>div>i{font-size:14px;margin-top:12px;color:#555555;} 
-.job>div>span{font-size:14px;color:#555555;}
-
+.container{margin-top: 80px;margin-bottom: 80px;}
+.aboutus-bg-news{background-image: url(./bg-news.jpg);}
+.detail-container{padding-bottom:80px;}
+.detail-container img{max-width: 100%;max-height: 100%;}
+.news-title{padding-top: 60px;padding-bottom: 15px;color: #000;font-size: 24px;}
+.pub-time{padding-top:15px;padding-bottom:15px;}
+#publish-time{color: #989898;font-size: 14px;padding-right:15px;}
+#publisher{color:#0059bd;font-size:14px;padding-left:15px;}
+.pd{padding-left:20px;padding-right:20px;}
+#articleContent{word-wrap:break-word;}
 @media(max-width:767px){
-	.container{margin-top:30px;margin-bottom:30px;}
-	.intro-wrapper{margin-bottom:40px;}
-	.intro-title{font-size:16px;}
-	p{font-size:14px;}
-	.job{text-align: center;}
-	.job>div{display:block;}
-	.contact-route >p{font-size:14px;}
-	.contact-route >p a{font-size:14px;}
-	.contact-route h4{font-size:16px;}
+	.container{padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;}
 }
+	
 </style>

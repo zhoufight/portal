@@ -8,10 +8,11 @@ import aboutUs from '@/components/aboutUs/aboutUs'
 import news from '@/components/news/news'
 import contactUs from '@/components/contactUs/contactUs'
 import joinUs from '@/components/joinUs/joinUs'
+import newsDetail from '@/components/newsDetail/newsDetail'
 
 Vue.use(Router)
 const router=new Router({
-	mode: 'history',
+	
     routes: [
 		{
 			path: '/',
@@ -57,13 +58,19 @@ const router=new Router({
 			path:'/contactUs',
 			name:'contactUs',
 			meta:{title:'联系我们'},
-			component:news
+			component:contactUs
 		},
 		{
 			path:'/joinUs',
 			name:'joinUs',
 			meta:{title:'加入我们'},
 			component:joinUs
+		},
+		{
+			path:'/newsDetail',
+			name:'newsDetail',
+			meta:{title:'新闻详情'},
+			component:newsDetail
 		}
 	]
 })

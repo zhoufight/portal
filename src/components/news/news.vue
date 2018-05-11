@@ -59,8 +59,8 @@
 								<p class="news-intro" data-content="......">{{item.ARTICLE_SUBTITLE}}</p>
 							</div>
 							<div class="col-md-2 col-sm-2 col-xs-12 news-list-right text-left">
-								<div class="date"><span>04-16</span></div>
-								<div class="year text-left"><span>2018</span></div>
+								<div class="date"><span>{{item.POST_TIME.substring(5,10)}}</span></div>
+								<div class="year text-left"><span>{{item.POST_TIME.substring(0,4)}}</span></div>
 								<div class="viewdetail"><a href="javascript:void(0);" class="btn btn-default">查看详情</a></div>
 							</div>
 							<div class="clearfix"></div>
@@ -69,8 +69,9 @@
 					
 				</ul>
 			</div>
-			<div class="page-div">
-				<ul class="pagination" id="newsPage"></ul>
+			<div class="page-div" v-if="newsArr.length != 0 ">
+				<Page :total="newsArr.totalCount" @on-change="changeData"></Page>
+<!--				<ul class="pagination" id="newsPage"></ul>-->
 			</div>
 		</div>
 		<div class="footer">
@@ -110,17 +111,20 @@ export default{
 		}
 	},
 	mounted(){
-		this.getData()
+		this.getData(1)
 	},
 	methods:{
-		getData () { 
-			var self = this
+		changeData(res){
+			this.getData(res)
+		},
+		getData (pageNum) { 
+			var self = this;
+			let url=this.HOST+'/portal/article.action?method=getNewsList&pageNum='+pageNum;
 			
-			this.$http.get(this.HOST+'/portal/article.action?method=getNewsList&pageNum=1').then(function(res){
+			this.$http.get(url).then(function(res){
 				self.newsArr=res.data
-			   console.log(res.data)
 			}).catch(function (error) {
-				console.log(error);
+				alert(error)
 			});
 		} 
 	}
